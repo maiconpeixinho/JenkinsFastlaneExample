@@ -1,5 +1,6 @@
-node {
-    stage('Build') {
-    	sh 'echo "Hello World"'
-    }
+#!groovy​
+
+stage 'build'
+node{
+    checkout scm
 }
