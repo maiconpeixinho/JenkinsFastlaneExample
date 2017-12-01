@@ -1,6 +1,6 @@
 #!groovy​
 
-stage 'build'
+stage 'checkout git'
 node{
     checkout scm
 }
