@@ -1,11 +1,12 @@
 node{
-	stage('checkout git'){
+	stage('checkout and setup'){
 		checkout scm
+		sh 'cd fastlane'
 	}
-	
-	stage('Front-end') {
-        docker.image('node:7-alpine').inside {
-            sh 'node --version'
+
+	stage('fastlane') {
+        docker.image('filiosoft/fastlane:latest').inside {
+            sh 'fastlane example'
         }
     }
 }
