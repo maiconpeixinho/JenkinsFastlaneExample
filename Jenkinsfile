@@ -5,7 +5,7 @@ node{
 	}
 
 	stage('fastlane') {
-        docker.image('filiosoft/fastlane:latest').inside {
+        withDockerContainer('filiosoft/fastlane:latest') {
         	sh 'export LANG="en_US.UTF-8"'
             sh 'fastlane example'
         }
